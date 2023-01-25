@@ -41,8 +41,8 @@ if (!empty($_POST)) {
 
             } else {
                 // echo "we cann't found the user"
-                $info = "The user account isn't found";
-                header("location:../AdminLogin.php?info=$info");
+                // $info = "The user account isn't found";
+                header("location:../AdminLogin.php?info=The user account isn't found");
 
             }
 
