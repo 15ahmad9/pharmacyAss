@@ -66,8 +66,8 @@ include("config/db_config.php");
             <tr>
                 <th>Prodect Name</th>
                 <th>Branches ID</th>
-                <th>ProductionDate</th>
-                <th>ExpiryDate</th>
+                <th>Price (JD)</th>
+                <th>Description</th>
             </tr>
 
 
@@ -93,8 +93,8 @@ include("config/db_config.php");
                         echo "<tr>
    <td> $data[Name]</td>
    <td> $data[BranchesID]</td>
-   <td> $data[ProductionDate]</td>
-   <td> $data[ExpiryDate]</td>
+   <td> $data[Price]</td>
+   <td> $data[Description]</td>
    </tr>";
                     }
                 }

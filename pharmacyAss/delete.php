@@ -51,6 +51,7 @@ include("config/db_config.php");
         th {
             border: 1px solid #ddd;
             text-align: left;
+            padding: 10px;
         }
 
         table {
@@ -75,7 +76,7 @@ include("config/db_config.php");
         table {
             position: absolute;
             top: 38%;
-            left: 34%;
+            left: 32%;
         }
     </style>
     <div>
@@ -108,8 +109,8 @@ include("config/db_config.php");
             <tr>
                 <th>Prodect Name</th>
                 <th>Branches ID</th>
-                <th>ProductionDate</th>
-                <th>ExpiryDate</th>
+                <th>Price (JD)</th>
+                <th>Description</th>
                 <th>Delete</th>
             </tr>
             <?php
@@ -133,8 +134,8 @@ include("config/db_config.php");
                         echo "<tr>
    <td> $data[Name]</td>
    <td> $data[BranchesID]</td>
-   <td> $data[ProductionDate]</td>
-   <td> $data[ExpiryDate]</td>
+   <td> $data[Price]</td>
+   <td> $data[Description]</td>
    <td> . <a href='process\delete_process.php?id=$product_id'>Delete</a> . </td>
    </tr>";
                     }

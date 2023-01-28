@@ -108,7 +108,10 @@
     <section class="branch">
         <form class="branch" action="process/insert_process.php" method="get">
             <!-- <label for="name">Name</label><br> -->
-            <input class="pass" type="text" name="name" placeholder="name"> <br>
+            <input class="pass" type="text" name="name" placeholder="Name"> <br>
+            <input class="pass" type="text" name="Price" placeholder="Price (JD)"> <br>
+            <input class="pass" type="text" name="Description" placeholder="Production Date"> <br>
+
             <select class="pass" name="branch">
                 <option value="1">Amman</option>
                 <option value="2">Irbid</option>

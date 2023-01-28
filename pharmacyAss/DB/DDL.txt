@@ -1,6 +1,6 @@
 CREATE TABLE Branches (ID int(10) NOT NULL AUTO_INCREMENT, Locations varchar(20), Managerusername int(11) NOT NULL, PRIMARY KEY (ID));
 CREATE TABLE Manager (username int(11) NOT NULL AUTO_INCREMENT, Password varchar(50), Name varchar(50), PRIMARY KEY (username));
-CREATE TABLE Product (ID int(10) NOT NULL AUTO_INCREMENT, Name varchar(255), Type varchar(50), ProductionDate date, ExpiryDate date, BranchesID int(10) NOT NULL, PRIMARY KEY (ID), UNIQUE INDEX (ID));
+CREATE TABLE Product (ID int(10) NOT NULL AUTO_INCREMENT, Name varchar(255), Price double, Description varchar(10000), BranchesID int(10) NOT NULL, PRIMARY KEY (ID), UNIQUE INDEX (ID));
 CREATE TABLE Question (phoneNumber int(10), Question varchar(255), Name varchar(50), ID int(11) NOT NULL AUTO_INCREMENT, PRIMARY KEY (ID));
 ALTER TABLE Branches ADD CONSTRAINT FKBranches691351 FOREIGN KEY (Managerusername) REFERENCES Manager (username);
 ALTER TABLE Product ADD CONSTRAINT FKProduct572707 FOREIGN KEY (BranchesID) REFERENCES Branches (ID);

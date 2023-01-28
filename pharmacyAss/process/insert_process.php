@@ -4,7 +4,7 @@ include("../config/db_config.php");
 if (isset($_GET)) {
     $error = "";
 
-    if (empty($_GET['name']) || empty($_GET['branch'])) {
+    if (empty($_GET['name']) || empty($_GET['branch']) || empty($_GET['Price'])) {
         $error .= "Name and branch cannot be empty";
     }
 
@@ -13,9 +13,12 @@ if (isset($_GET)) {
     } else {
 
         $name = $_GET['name'];
+        $Price = $_GET['Price'];
+        $Description = $_GET['Description'];
         $branch = $_GET['branch'];
 
-        $query = "INSERT INTO product (Name, BranchesID) VALUES ('$name', '$branch')";
+
+        $query = "INSERT INTO product (Name, Price, Description, BranchesID) VALUES ('$name', '$Price', '$Description', '$branch')";
 
         $get = mysqli_query($connection, $query);
         if (!$get) {

@@ -33,7 +33,7 @@ if (!empty($_POST)) {
 
                 if ($name_data['Name'] = 'manager') {
                     session_start();
-                    $_SESSION['username'] = $data['username'];
+                    $_SESSION['username'] = $data['Name'];
                     $_SESSION['Name'] = $data['Name'];
 
                     header("location:../adminPage.php");
