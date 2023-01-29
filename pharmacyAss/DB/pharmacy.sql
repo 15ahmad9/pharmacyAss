@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 20, 2023 at 01:55 AM
+-- Generation Time: Jan 29, 2023 at 02:23 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -73,9 +73,8 @@ INSERT INTO `manager` (`username`, `Password`, `Name`) VALUES
 CREATE TABLE `product` (
   `ID` int(10) NOT NULL,
   `Name` varchar(255) DEFAULT NULL,
-  `Type` varchar(50) DEFAULT NULL,
-  `ProductionDate` date DEFAULT NULL,
-  `ExpiryDate` date DEFAULT NULL,
+  `Price` double DEFAULT NULL,
+  `Description` varchar(10000) DEFAULT NULL,
   `BranchesID` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -83,47 +82,63 @@ CREATE TABLE `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`ID`, `Name`, `Type`, `ProductionDate`, `ExpiryDate`, `BranchesID`) VALUES
-(5, 'panadol', NULL, '2022-07-05', '2025-09-15', 1),
-(6, 'adol', NULL, '2021-01-07', '2023-10-07', 1),
-(7, 'panda', NULL, '2020-07-10', '2023-10-07', 1),
-(8, 'Halothane', NULL, NULL, NULL, 2),
-(9, 'Thiopental', NULL, NULL, NULL, 2),
-(10, 'Albendazole', NULL, NULL, NULL, 3),
-(11, 'Levamisole', NULL, NULL, NULL, 3),
-(12, 'Mebendazole', NULL, NULL, NULL, 3),
-(13, ' Praziquantel', NULL, NULL, NULL, 3),
-(14, 'Ampicillin', NULL, NULL, NULL, 4),
-(15, 'Doxycycline', NULL, NULL, NULL, 4),
-(16, 'Spectinomycin', NULL, NULL, NULL, 5),
-(17, 'trimethoprim', NULL, NULL, NULL, 5),
-(18, 'Rifampicin', NULL, NULL, NULL, 5),
-(19, 'Dapsone', NULL, NULL, NULL, 5),
-(20, 'Amodiaquine', NULL, NULL, NULL, 6),
-(21, 'Amodiaquine', NULL, '2023-01-01', '2024-03-07', 1),
-(22, 'Tareg ', NULL, '2021-01-07', '2023-10-07', 1),
-(23, 'Tareg ', NULL, NULL, NULL, 6),
-(24, 'Dapsone', NULL, '2023-01-01', '2025-09-15', 1),
-(25, 'Dapsone', NULL, NULL, NULL, 6),
-(27, 'cortizon', NULL, NULL, NULL, 2),
-(28, 'cortizon', NULL, '2022-07-05', '2025-09-15', 1),
-(29, 'panadol', NULL, NULL, NULL, 6),
-(30, 'abatacept', NULL, '2022-12-23', '2023-04-14', 1),
-(31, 'abramycin', NULL, '2023-01-10', '2025-01-16', 1),
-(32, 'adapalene', NULL, NULL, NULL, 2),
-(33, 'Acepromazine', NULL, '2023-01-04', '2026-01-15', 1),
-(34, 'acidapsone', NULL, NULL, NULL, 5),
-(35, 'acyclidine ', NULL, NULL, NULL, 4),
-(36, 'Acimetacin', NULL, '2022-07-05', '2025-01-16', 1),
-(37, 'agomelatine', NULL, NULL, NULL, 4),
-(38, 'oxymetazoline', NULL, NULL, NULL, 4),
-(39, 'acarbose', NULL, NULL, NULL, 4),
-(40, 'alaproclat', NULL, NULL, NULL, 6),
-(41, ' altinicline ', NULL, NULL, NULL, 6),
-(42, 'Amlodipine', NULL, NULL, NULL, 5),
-(43, 'revanine', NULL, NULL, NULL, 4),
-(44, 'FLUIBRON', NULL, NULL, NULL, 3),
-(45, 'FLUIBRON', NULL, NULL, NULL, 4);
+INSERT INTO `product` (`ID`, `Name`, `Price`, `Description`, `BranchesID`) VALUES
+(1, 'Panadol Extra Tablet (pkt/72pcs)', 7.2, 'Panadol Extra with Optizorb helps to provide stronger pain relief as compared to standard paracetamol alone. Containing the same active ingredients as Panadol Extra but using a new disintegrant techology, Panadol Extra with Optizorb provides fast, suitable, effective relief of tough pain, while being gentle on the stomach', 1),
+(2, 'Motilium For Nausea And Vomiting 10Mg', 5.6, 'Motilium contains the medicine called domperidone. Motilium is used for adults and adolescents 12 years of age and older and a body weight of 35kg or more to treat nausea (feeling sick) and vomiting (being sick).', 1),
+(3, 'Zirtek 1Mg', 8.5, 'Zirtek 1Mg / Ml Oral Solution is banana-flavoured and as little as one teaspoon a day is enough for up to 24 hour symptom relief. Particularly suitable for children who find it hard not to scratch rashes.', 1),
+(4, 'Zirtek 1Mg', 8.5, 'Zirtek 1Mg / Ml Oral Solution is banana-flavoured and as little as one teaspoon a day is enough for up to 24 hour symptom relief. Particularly suitable for children who find it hard not to scratch rashes.', 2),
+(5, 'Zirtek 1Mg', 8.5, 'Zirtek 1Mg / Ml Oral Solution is banana-flavoured and as little as one teaspoon a day is enough for up to 24 hour symptom relief. Particularly suitable for children who find it hard not to scratch rashes.', 3),
+(6, 'Zirtek 1Mg', 8.5, 'Zirtek 1Mg / Ml Oral Solution is banana-flavoured and as little as one teaspoon a day is enough for up to 24 hour symptom relief. Particularly suitable for children who find it hard not to scratch rashes.', 4),
+(7, 'Zirtek 1Mg', 8.5, 'Zirtek 1Mg / Ml Oral Solution is banana-flavoured and as little as one teaspoon a day is enough for up to 24 hour symptom relief. Particularly suitable for children who find it hard not to scratch rashes.', 5),
+(8, 'Zirtek 1Mg', 8.5, 'Zirtek 1Mg / Ml Oral Solution is banana-flavoured and as little as one teaspoon a day is enough for up to 24 hour symptom relief. Particularly suitable for children who find it hard not to scratch rashes.', 6),
+(9, 'Cetrine Hayfever Allergy Relief 10Mg', 2.5, 'Cetrine Hayfever Allergy Relief 10Mg Cetirizine Tablets suitable for children and adults.', 1),
+(10, 'Preparation H Soothing Wipes 30 Pack', 2.85, 'Preparation H Soothing Wipes 30 Pack', 1),
+(11, 'Preparation H Soothing Wipes 30 Pack', 2.85, 'Preparation H Soothing Wipes 30 Pack', 5),
+(12, 'Anusol Hc Suppositories 12 Pack', 5.6, 'Anusol Hc Suppositories 12 Pack are used to effectively treat haemorrhoids (piles).', 1),
+(13, 'Piriton Tablets 4Mg 30 Pack', 6.15, 'Piriton Allergy Relief Tablets 4Mg 30 Pack provided fast relief from the symptoms of hayfever and other allergies.', 1),
+(14, 'Vermox Tablets For The Treatment Of Threadworm', 2.85, 'Vermox Tablets For The Treatment Of Threadworm 6 Tablets is a medicine used to treat common worm infections.', 1),
+(15, 'Vermox Tablets For The Treatment Of Threadworm', 2.85, 'Vermox Tablets For The Treatment Of Threadworm 6 Tablets is a medicine used to treat common worm infections.', 3),
+(16, 'Vermox Tablets For The Treatment Of Threadworm', 2.85, 'Vermox Tablets For The Treatment Of Threadworm 6 Tablets is a medicine used to treat common worm infections.', 2),
+(17, 'Panadol Night', 6.6, 'Panadol Night Film Coated Tablets 20 Pack is specially formulated for the night-time relief of: colds and flu symptoms, muscular aches and pains, backache, headache, toothache, and period pain.', 1),
+(18, 'Panadol Night', 6.6, 'Panadol Night Film Coated Tablets 20 Pack is specially formulated for the night-time relief of: colds and flu symptoms, muscular aches and pains, backache, headache, toothache, and period pain.', 2),
+(19, 'Panadol Night', 6.6, 'Panadol Night Film Coated Tablets 20 Pack is specially formulated for the night-time relief of: colds and flu symptoms, muscular aches and pains, backache, headache, toothache, and period pain.', 3),
+(20, 'Panadol Night', 6.6, 'Panadol Night Film Coated Tablets 20 Pack is specially formulated for the night-time relief of: colds and flu symptoms, muscular aches and pains, backache, headache, toothache, and period pain.', 4),
+(21, 'Panadol Night', 6.6, 'Panadol Night Film Coated Tablets 20 Pack is specially formulated for the night-time relief of: colds and flu symptoms, muscular aches and pains, backache, headache, toothache, and period pain.', 5),
+(22, 'Panadol Night', 6.6, 'Panadol Night Film Coated Tablets 20 Pack is specially formulated for the night-time relief of: colds and flu symptoms, muscular aches and pains, backache, headache, toothache, and period pain.', 6),
+(23, 'Advil Cold & Flu Tablets Pack', 4.95, 'Advil Cold & Flu tablets contain two active ingredients which work together to relieve the major symptoms of sinus and pain:  Ibuprofen relieves pain, reduces inflammation and lowers temperature  Pseudoephedrine is an effective decongestantto ease nasal and sinus congestion.', 1),
+(24, 'Murine Eye Drops Bright Mois', 9, 'Murine Eye Drops Bright and Moist is specially formulated to contain both a lubricant and a brightener to help refresh, soothe, alleviate the symptoms of dry eyes and make them sparkle.', 1),
+(25, 'Listerine Coolmint 500Ml', 3.25, 'Listerine Coolmint 500Ml for a cleaner fresher mouth than brushing alone.', 1),
+(26, 'Panadol 500Mg', 2.5, 'Panadol 500mg Paracetamol tablets are used for fast and effective relief of headaches, toothache, backache, rheumatic and muscle pains and period pain.', 1),
+(27, 'Telfast Allergy 120Mg 30 Pack', 8.4, 'Telfast Allergy 120mg is indicated in adults and children 12 years and older for the relief of symptoms associated with seasonal allergic rhinitis.', 1),
+(28, 'Strepsils Intensive Honey & Lemon Lozenges', 7.45, 'For the symptomatic relief of sore throats. Strepsils Intensive Lozenges are indicated in adults and adolescents over 12 years of age.', 1),
+(29, 'Strepsils Intensive Honey & Lemon Lozenges', 7.45, 'For the symptomatic relief of sore throats. Strepsils Intensive Lozenges are indicated in adults and adolescents over 12 years of age.', 2),
+(30, 'Sudafed Decongestant 60Mg', 5.15, 'Provide relief from cold, flu and allergy symptoms such as blocked sinuses, stuffy nose and catarrh.', 2),
+(31, 'Gaviscon Advance Peppermint Oral Suspension 300Ml', 7.8, 'Gaviscon Advance Peppermint Oral Suspension is a fast and powerful Relief of Heartburn and Indigestion.', 3),
+(32, 'Gaviscon Advance Peppermint Oral Suspension 300Ml', 7.8, 'Gaviscon Advance Peppermint Oral Suspension is a fast and powerful Relief of Heartburn and Indigestion.', 5),
+(33, 'Imodium Instants 2Mg Orodispersible Tablets 12 Pack', 6.95, 'Imodium Instants are the fastest dissolving tablets for effective relief from diarrhea.', 4),
+(34, 'Imodium Instants 2Mg Orodispersible Tablets 12 Pack', 6.95, 'Imodium Instants are the fastest dissolving tablets for effective relief from diarrhea.', 3),
+(35, 'Rennie Dual Action Chewable Tabs 24Tabs', 4.69, 'Rennie Dual Action Chewable tablets provide long lasting relief from heartburn and acid indigestion. It has a powerful formula that works in two ways to relieve the painful symptoms of heartburn.', 1),
+(36, 'Rennie Dual Action Chewable Tabs 24Tabs', 4.69, 'Rennie Dual Action Chewable tablets provide long lasting relief from heartburn and acid indigestion. It has a powerful formula that works in two ways to relieve the painful symptoms of heartburn.', 6),
+(37, 'Rennie Dual Action Chewable Tabs 24Tabs', 4.69, 'Rennie Dual Action Chewable tablets provide long lasting relief from heartburn and acid indigestion. It has a powerful formula that works in two ways to relieve the painful symptoms of heartburn.', 2),
+(38, 'Panadol Actifast 500Mg Tablets', 4, 'Panadol ActiFast contains the active ingredient paracetamol, a well-known ingredient used to relieve pain and also reduce body temperature when suffering with a fever.', 3),
+(39, 'Panadol Actifast 500Mg Tablets', 4, 'Panadol ActiFast contains the active ingredient paracetamol, a well-known ingredient used to relieve pain and also reduce body temperature when suffering with a fever.', 2),
+(40, 'Panadol Actifast 500Mg Tablets', 4, 'Panadol ActiFast contains the active ingredient paracetamol, a well-known ingredient used to relieve pain and also reduce body temperature when suffering with a fever.', 5),
+(41, 'Lemsip Max Cold & Flu Hot Lemon 10 Sachets', 6.75, 'For the relief of symptoms associated with the common cold or influenza, including fever, headache, sore throat, body aches and pains.', 6),
+(42, 'Lemsip Max Cold & Flu Hot Lemon 10 Sachets', 6.75, 'For the relief of symptoms associated with the common cold or influenza, including fever, headache, sore throat, body aches and pains.', 3),
+(43, 'Lemsip Max Cold & Flu Hot Lemon 10 Sachets', 6.75, 'For the relief of symptoms associated with the common cold or influenza, including fever, headache, sore throat, body aches and pains.', 5),
+(44, 'Nicorette Original Gum 4Mg (30 Pieces)', 8.15, 'Nicorette Original Gum 4Mg (30 Pieces) whether you’re reducing one cigarette at a time or quitting for good, choose Nicorette Gum to help control your nicotine intake.', 3),
+(45, 'Nicorette Original Gum 4Mg (30 Pieces)', 8.15, 'Nicorette Original Gum 4Mg (30 Pieces) whether you’re reducing one cigarette at a time or quitting for good, choose Nicorette Gum to help control your nicotine intake.', 4),
+(46, 'Nicorette Original Gum 4Mg (30 Pieces)', 8.15, 'Nicorette Original Gum 4Mg (30 Pieces) whether you’re reducing one cigarette at a time or quitting for good, choose Nicorette Gum to help control your nicotine intake.', 6),
+(47, 'Senokot 7.5Mg Tablets', 6.5, 'Senokot 7.5Mg Tablets are a reliably effective laxative made with natural Senna treated especially to yield a constant amount of active ingredient in each dose, to give predictable relief from occasional constipation.', 4),
+(48, 'Senokot 7.5Mg Tablets', 6.5, 'Senokot 7.5Mg Tablets are a reliably effective laxative made with natural Senna treated especially to yield a constant amount of active ingredient in each dose, to give predictable relief from occasional constipation.', 6),
+(49, 'Cystopurin Granules', 6.35, 'Cystopurin Granules For Oral Solution Relief From Cystitis 6 Sachets is a 48 hour treatment for the symptoms of cystitis.', 4),
+(50, 'Cystopurin Granules', 6.35, 'Cystopurin Granules For Oral Solution Relief From Cystitis 6 Sachets is a 48 hour treatment for the symptoms of cystitis.', 5),
+(51, 'Halls Sugar Free', 0.7, 'Halls Mentholyptus Original Sugar Free is a boiled candy that has a unique vapour action with a menthol hit to give you a deep breath of fresh air', 5),
+(52, 'Halls Sugar Free', 0.7, 'Halls Mentholyptus Original Sugar Free is a boiled candy that has a unique vapour action with a menthol hit to give you a deep breath of fresh air', 6),
+(53, 'Centrum Kids', 5.75, 'Centrum Kids Daily Chewable Multivitamin 30 Pack High-quality micronutrient supplement for kids in a deliciously chewable tablet.', 1),
+(54, 'Centrum Kids', 5.75, 'Centrum Kids Daily Chewable Multivitamin 30 Pack High-quality micronutrient supplement for kids in a deliciously chewable tablet.', 4),
+(55, 'Aya Kids Crunchy Bio Probiotic 30Tabs', 9.85, 'Aya Kids Crunchy Bio Probiotic contains active bacteria lyophilsed, gently tabletted and then individually sealed to enhance their stability unitl the end of shelf life. ', 1),
+(56, 'Aya Kids Crunchy Bio Probiotic 30Tabs', 9.85, 'Aya Kids Crunchy Bio Probiotic contains active bacteria lyophilsed, gently tabletted and then individually sealed to enhance their stability unitl the end of shelf life. ', 4);
 
 -- --------------------------------------------------------
 
@@ -176,8 +191,7 @@ ALTER TABLE `manager`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `ID` (`ID`),
-  ADD KEY `FKProduct572707` (`BranchesID`);
+  ADD UNIQUE KEY `ID` (`ID`);
 
 --
 -- Indexes for table `question`
@@ -205,7 +219,7 @@ ALTER TABLE `manager`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `question`
@@ -222,12 +236,6 @@ ALTER TABLE `question`
 --
 ALTER TABLE `branches`
   ADD CONSTRAINT `FKBranches691351` FOREIGN KEY (`Managerusername`) REFERENCES `manager` (`username`);
-
---
--- Constraints for table `product`
---
-ALTER TABLE `product`
-  ADD CONSTRAINT `FKProduct572707` FOREIGN KEY (`BranchesID`) REFERENCES `branches` (`ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

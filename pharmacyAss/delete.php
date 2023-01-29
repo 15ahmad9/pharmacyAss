@@ -76,7 +76,8 @@ include("config/db_config.php");
         table {
             position: absolute;
             top: 38%;
-            left: 32%;
+            left: 2%;
+    right: 2%;
         }
     </style>
     <div>

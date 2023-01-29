@@ -45,6 +45,7 @@
         table, td, th {  
   border: 1px solid #ddd;
   text-align: left;
+  padding: 7px;
 }
 
 table {
@@ -56,7 +57,13 @@ table {
             position: absolute;
             left: 30%;
             top: 20%;
+
         }
+
+        position: absolute;
+            top: 38%;
+            left: 2%;
+    right: 2%;
     </style>
 
     <div id="QT">

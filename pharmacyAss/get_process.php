@@ -51,14 +51,17 @@ include("config/db_config.php");
         th {
             border: 1px solid #ddd;
             text-align: left;
+            padding: 7px;
         }
 
         table {
             border-collapse: collapse;
             /* width: 100%; */
             position: absolute;
-            left: 38%;
+            left: 2%;
+            right: 2%;
             top: 20%;
+            
         }
     </style>
     <div>
