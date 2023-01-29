@@ -13,8 +13,8 @@ include("config/db_config.php");
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="style.css" type="text/css" />
-    <link rel="stylesheet" href="admin.css" type="text/css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="admin.css" />
 
     <meta name="author" content="Ahmad Ghanem">
     <meta name="description" content="Blog about Pharmacy">
@@ -41,6 +41,7 @@ include("config/db_config.php");
                 <li><a href="index.php">Home</a> </li>
 
                 <li><a href="AdminLogin.php">Admin login</a></li>
+                <li><a href="adminPage.php">Back</a> </li>
             </ul>
         </nav>
     </header>
@@ -50,7 +51,7 @@ include("config/db_config.php");
         td,
         th {
             border: 1px solid #ddd;
-            text-align: left;
+            /* text-align: left; */
             padding: 10px;
         }
 
@@ -65,12 +66,8 @@ include("config/db_config.php");
 
         #fffff {
             position: absolute;
-            top: 25%;
+            top: 15%;
             left: 39%;
-        }
-
-        #sub {
-            width: 180px;
         }
 
         table {
@@ -79,6 +76,39 @@ include("config/db_config.php");
             left: 2%;
     right: 2%;
         }
+
+        #sub {
+            background: #2b3a55;
+    padding: 15px 20px;
+    border-radius: 30px;
+    transition: all 0.3s;
+    width: 180px;
+    position: relative;
+    left: 105px;
+      }
+
+      #sub:hover {
+        background: #1b253a;
+      }
+
+      .pass {
+    width: 80%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 19px;
+    letter-spacing: 1px;
+    background: rgb(145 122 122 / 4%);
+    padding: 15px 20px;
+    /* border: none; */
+    border-radius: 30px;
+    /* outline: none; */
+    /* box-sizing: border-box; */
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 25px;
+    margin-left: 46px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
     </style>
     <div>
         <?php
@@ -90,12 +120,14 @@ include("config/db_config.php");
         }
 
 
+        
+
         ?>
     </div>
     <div>
 
-        <form id="fffff" action="delete.php" method="post">
-            <select name="branch">
+        <form id="fffff"  action="delete.php" method="post">
+            <select class="pass" name="branch">
                 <option value="1">Amman</option>
                 <option value="2">Irbid</option>
                 <option value="3">Aqaba</option>
@@ -137,7 +169,7 @@ include("config/db_config.php");
    <td> $data[BranchesID]</td>
    <td> $data[Price]</td>
    <td> $data[Description]</td>
-   <td> . <a href='process\delete_process.php?id=$product_id'>Delete</a> . </td>
+   <td> <a href='process\delete_process.php?id=$product_id'>Delete</a> </td>
    </tr>";
                     }
                 }

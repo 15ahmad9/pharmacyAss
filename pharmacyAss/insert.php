@@ -37,6 +37,7 @@
                 <li><a href="index.php">Home</a> </li>
 
                 <li><a href="AdminLogin.php">Admin login</a></li>
+                <li><a href="adminPage.php">Back</a> </li>
             </ul>
         </nav>
     </header>
@@ -51,7 +52,7 @@
         }
 
         .branch {
-            position: absolute;
+            position: fixed;
             left: 40%;
             top: 22%;
 
@@ -103,14 +104,28 @@
             padding: 15px;
             background: #2b3a55c8;
             color: white;
-        }
+
+          }  
+        h1{
+                position: absolute;
+    left: 34%;
+    top: 16%;
+            }
+        
     </style>
+    <h1>Insert the information for product</h1>
     <section class="branch">
+        
+        
         <form class="branch" action="process/insert_process.php" method="get">
             <!-- <label for="name">Name</label><br> -->
-            <input class="pass" type="text" name="name" placeholder="Name"> <br>
-            <input class="pass" type="text" name="Price" placeholder="Price (JD)"> <br>
-            <input class="pass" type="text" name="Description" placeholder="Description"> <br>
+            
+            <input class="pass" type="text" name="name" placeholder="Name">
+             <br>
+            <input class="pass" type="text" name="Price" placeholder="Price (JD)">
+             <br>
+            <input class="pass" type="text" name="Description" placeholder="Description">
+             <br>
 
             <select class="pass" name="branch">
                 <option value="1">Amman</option>
@@ -138,6 +153,9 @@
             </div>
         </form>
     </section>
+
+
+    
 </body>
 
 </html>

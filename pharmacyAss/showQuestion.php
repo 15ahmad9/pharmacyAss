@@ -37,6 +37,7 @@
                 <li><a href="index.php">Home</a> </li>
 
                 <li><a href="AdminLogin.php">Admin login</a></li>
+                <li><a href="adminPage.php">Back</a> </li>
             </ul>
         </nav>
     </header>
